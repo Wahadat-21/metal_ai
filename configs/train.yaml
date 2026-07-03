@@ -1,0 +1,38 @@
+# configs/train.yaml
+default:
+  epochs: 100
+  learning_rate: 1e-3
+  lr_scheduler:
+    type: cosine  # Options: step, cosine, plateau, one_cycle
+    params:
+      step_size: 30
+      gamma: 0.1
+      T_max: 100
+      eta_min: 1e-6
+  
+  optimizer:
+    type: adamw  # Options: adam, adamw, sgd, rmsprop
+    params:
+      betas: [0.9, 0.999]
+      eps: 1e-8
+      weight_decay: 1e-4
+  
+  early_stopping:
+    patience: 20
+    min_delta: 1e-4
+    monitor: val_loss
+  
+  gradient_clipping:
+    enabled: true
+    max_norm: 1.0
+  
+  mixed_precision:
+    enabled: false
+    dtype: float16
+  
+  accumulate_grad_batches: 1
+  log_every_n_steps: 10
+  validate_every_n_epochs: 1
+  save_every_n_epochs: 5
+  save_best_only: true
+  resume_from_checkpoint: null
