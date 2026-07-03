@@ -1,0 +1,9 @@
+# configs/inference.yaml
+default:
+  checkpoint_path: ${project.root}/checkpoints/best_model.pt
+  output_path: ${project.root}/outputs/predictions.csv
+  batch_size: 64
+  num_workers: 4
+  explainability: true
+  uncertainty: true
+  visualization: true
