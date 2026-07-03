@@ -1,13 +1,48 @@
-CompositePrediction/
-
+CompositeMaterialAI/
 │
-├── train.py
-├── model.py
-├── dataset.py
-├── utils.py
-├── config.py
+├── README.md
+├── LICENSE
+├── requirements.txt
+├── pyproject.toml
+├── setup.py
+├── .gitignore
+├── Dockerfile
+├── docker-compose.yml
+├── Makefile
+│
+├── configs/
+│   ├── default.yaml
+│   ├── model.yaml
+│   ├── train.yaml
+│   └── inference.yaml
+│
 ├── data/
-│      composite.csv
+│   ├── raw/
+│   ├── processed/
+│   └── external/
 │
-└── saved_models/
-        best_model.pth
+├── notebooks/
+│
+├── src/
+│   ├── datasets/
+│   ├── preprocessing/
+│   ├── models/
+│   ├── losses/
+│   ├── metrics/
+│   ├── callbacks/
+│   ├── trainers/
+│   ├── evaluators/
+│   ├── inference/
+│   ├── visualization/
+│   ├── explainability/
+│   ├── utils/
+│   └── cli/
+│
+├── scripts/
+│
+├── tests/
+│
+├── checkpoints/
+├── logs/
+├── outputs/
+└── docs/
