@@ -1,0 +1,35 @@
+# configs/model.yaml
+default:
+  model_type: transformer  # Options: transformer, mlp, cnn, ensemble
+  input_dim: 128
+  hidden_dim: 256
+  output_dim: 1  # Single property prediction
+  
+  # Transformer specific
+  num_layers: 6
+  num_heads: 8
+  dropout: 0.1
+  activation: gelu
+  
+  # MLP specific
+  mlp_layers: [512, 256, 128]
+  mlp_dropout: 0.2
+  
+  # CNN specific
+  cnn_channels: [64, 128, 256]
+  cnn_kernel_size: 3
+  cnn_pool_size: 2
+  
+  # Ensemble specific
+  ensemble_size: 5
+  ensemble_method: averaging  # Options: averaging, voting, stacking
+  
+  # Regularization
+  weight_decay: 1e-4
+  batch_norm: true
+  layer_norm: true
+  
+  # Loss function
+  loss: mse  # Options: mse, mae, huber, custom
+  loss_params:
+    delta: 1.0  # For huber loss
